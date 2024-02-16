@@ -1,0 +1,15 @@
+# Node
+node_modules
+
+## Panda
+pandas
+styled-system-studio
+
+## Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+## Storybook
+src/components/**/*.stories.tsx
