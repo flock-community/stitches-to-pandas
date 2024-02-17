@@ -22,7 +22,7 @@ const ScrollAreaDemo = () => <ScrollAreaRoot>
     </ScrollAreaScrollbar>
     <ScrollAreaCorner />
   </ScrollAreaRoot>;
-const SCROLLBAR_SIZE = "10px";
+const SCROLLBAR_SIZE = 10;
 const ScrollAreaRoot = styled(ScrollArea.Root, {
   base: {
     width: "200px",
