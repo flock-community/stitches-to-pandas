@@ -7,8 +7,6 @@ Babel plugin to convert StitchesCss to PandaCss.
 - **scripts:generate**: Generate Storybook `npm run scripts:generate`
 - **storybook**: Run storybook  `npm run storybook`
 
-
-
 The [plugin](src%2Fbabel%2Fplugin.ts) does the following transformations:
 
 - Add styled-system import
