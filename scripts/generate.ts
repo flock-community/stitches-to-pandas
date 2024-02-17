@@ -3,7 +3,7 @@ import {join, resolve} from "path";
 
 async function createComponentStoriesFromTemplate() {
     const componentPath = resolve(__dirname, "../src/components");
-    const templatePath = resolve(__dirname, "../src/templates");
+    const templatePath = resolve(__dirname, "../templates");
 
     const dir = await readdir(componentPath);
 

@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Tooltip from '@radix-ui/react-tooltip';
-import { violet, blackA } from '@radix-ui/colors';
 import { PlusIcon } from '@radix-ui/react-icons';
 const TooltipDemo = () => {
   return <Tooltip.Provider>
@@ -27,11 +26,11 @@ const slideDownAndFade = "slideDownAndFade";
 const slideLeftAndFade = "slideLeftAndFade";
 const TooltipContent = styled(Tooltip.Content, {
   base: {
-    borderRadius: 4,
+    borderRadius: "4px",
     padding: '10px 15px',
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: 1,
-    color: violet.violet11,
+    color: "{colors.violet.950}",
     backgroundColor: 'white',
     boxShadow: 'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
     userSelect: 'none',
@@ -63,16 +62,16 @@ const IconButton = styled('button', {
   base: {
     fontFamily: 'inherit',
     borderRadius: '100%',
-    height: 35,
-    width: 35,
+    height: "35px",
+    width: "35px",
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: violet.violet11,
+    color: "{colors.violet.950}",
     backgroundColor: 'white',
-    boxShadow: `0 2px 10px ${blackA.blackA4}`,
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
     '&:hover': {
-      backgroundColor: violet.violet3
+      backgroundColor: "{colors.violet.200}"
     },
     '&:focus': {
       boxShadow: `0 0 0 2px black`

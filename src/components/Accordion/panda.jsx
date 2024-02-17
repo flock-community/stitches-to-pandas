@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from "react";
 import * as Accordion from "@radix-ui/react-accordion";
-import { violet, blackA, mauve } from "@radix-ui/colors";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 const AccordionDemo = () => <AccordionRoot type="single" defaultValue="item-1" collapsible>
     <AccordionItem value="item-1">
@@ -29,29 +28,29 @@ const AccordionDemo = () => <AccordionRoot type="single" defaultValue="item-1" c
   </AccordionRoot>;
 const AccordionRoot = styled(Accordion.Root, {
   base: {
-    borderRadius: 6,
-    width: 300,
-    backgroundColor: mauve.mauve6,
-    boxShadow: `0 2px 10px ${blackA.blackA2}`
+    borderRadius: "6px",
+    width: "300px",
+    backgroundColor: "{colors.mauve.500}",
+    boxShadow: `0 2px 10px ${"{colors.blackA.100}"}`
   }
 });
 const AccordionItem = styled(Accordion.Item, {
   base: {
     overflow: "hidden",
-    marginTop: 1,
+    marginTop: "1px",
     "&:first-child": {
-      marginTop: 0,
-      borderTopLeftRadius: 4,
-      borderTopRightRadius: 4
+      marginTop: "0px",
+      borderTopLeftRadius: "4px",
+      borderTopRightRadius: "4px"
     },
     "&:last-child": {
-      borderBottomLeftRadius: 4,
-      borderBottomRightRadius: 4
+      borderBottomLeftRadius: "4px",
+      borderBottomRightRadius: "4px"
     },
     "&:focus-within": {
       position: "relative",
-      zIndex: 1,
-      boxShadow: `0 0 0 2px ${mauve.mauve12}`
+      zIndex: "1px",
+      boxShadow: `0 0 0 2px ${"{colors.mauve.950}"}`
     }
   }
 });
@@ -79,24 +78,24 @@ const StyledTrigger = styled(Accordion.Trigger, {
   base: {
     fontFamily: "inherit",
     padding: "0 20px",
-    height: 45,
+    height: "45px",
     flex: 1,
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: 1,
-    color: violet.violet11,
-    boxShadow: `0 1px 0 ${mauve.mauve6}`,
+    color: "{colors.violet.950}",
+    boxShadow: `0 1px 0 ${"{colors.mauve.500}"}`,
     backgroundColor: "white",
     "&:hover": {
-      backgroundColor: mauve.mauve2
+      backgroundColor: "{colors.mauve.100}"
     }
   }
 });
 const StyledChevron = styled(ChevronDownIcon, {
   base: {
-    color: violet.violet10,
+    color: "{colors.violet.900}",
     transition: "transform 300ms cubic-bezier(0.87, 0, 0.13, 1)",
     "[data-state=open] &": {
       transform: "rotate(180deg)"
@@ -108,9 +107,9 @@ const slideUp = "slideUp";
 const StyledContent = styled(Accordion.Content, {
   base: {
     overflow: "hidden",
-    fontSize: 15,
-    color: mauve.mauve11,
-    backgroundColor: mauve.mauve2,
+    fontSize: "15px",
+    color: "{colors.mauve.950}",
+    backgroundColor: "{colors.mauve.100}",
     '&[data-state="open"]': {
       animation: `${slideDown} 300ms cubic-bezier(0.87, 0, 0.13, 1)`
     },

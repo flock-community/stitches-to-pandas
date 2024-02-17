@@ -1,9 +1,8 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { CaretDownIcon } from '@radix-ui/react-icons';
-import { violet, mauve, indigo, purple, blackA } from '@radix-ui/colors';
 const NavigationMenuDemo = () => {
   return <NavigationMenuRoot>
       <NavigationMenuList>
@@ -98,7 +97,7 @@ const NavigationMenuRoot = styled(NavigationMenu.Root, {
     display: 'flex',
     justifyContent: 'center',
     width: '100vw',
-    zIndex: 1
+    zIndex: "1px"
   }
 });
 const NavigationMenuList = styled(NavigationMenu.List, {
@@ -106,27 +105,29 @@ const NavigationMenuList = styled(NavigationMenu.List, {
     display: 'flex',
     justifyContent: 'center',
     backgroundColor: 'white',
-    padding: 4,
-    borderRadius: 6,
+    padding: "4px",
+    borderRadius: "6px",
     listStyle: 'none',
-    boxShadow: `0 2px 10px ${blackA.blackA4}`,
-    margin: 0
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
+    margin: "0px"
   }
 });
 const itemStyles = {
-  padding: '8px 12px',
-  outline: 'none',
-  userSelect: 'none',
-  fontWeight: 500,
-  lineHeight: 1,
-  borderRadius: 4,
-  fontSize: 15,
-  color: violet.violet11,
-  '&:focus': {
-    boxShadow: `0 0 0 2px ${violet.violet7}`
-  },
-  '&:hover': {
-    backgroundColor: violet.violet3
+  base: {
+    padding: '8px 12px',
+    outline: 'none',
+    userSelect: 'none',
+    fontWeight: "500px",
+    lineHeight: 1,
+    borderRadius: "4px",
+    fontSize: "15px",
+    color: "{colors.violet.950}",
+    '&:focus': {
+      boxShadow: `0 0 0 2px ${"{colors.violet.600}"}`
+    },
+    '&:hover': {
+      backgroundColor: "{colors.violet.200}"
+    }
   }
 };
 const NavigationMenuTrigger = styled(NavigationMenu.Trigger, {
@@ -134,22 +135,24 @@ const NavigationMenuTrigger = styled(NavigationMenu.Trigger, {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    gap: 2
+    gap: "2px",
+    ...itemStyles
   }
 });
 const NavigationMenuLink = styled(NavigationMenu.Link, {
   base: {
     display: 'block',
     textDecoration: 'none',
-    fontSize: 15,
-    lineHeight: 1
+    fontSize: "15px",
+    lineHeight: 1,
+    ...itemStyles
   }
 });
 const NavigationMenuContent = styled(NavigationMenu.Content, {
   base: {
     position: 'absolute',
-    top: 0,
-    left: 0,
+    top: "0px",
+    left: "0px",
     width: '100%',
     '@media only screen and (min-width: 600px)': {
       width: 'auto'
@@ -175,10 +178,10 @@ const NavigationMenuIndicator = styled(NavigationMenu.Indicator, {
     display: 'flex',
     alignItems: 'flex-end',
     justifyContent: 'center',
-    height: 10,
+    height: "10px",
     top: '100%',
     overflow: 'hidden',
-    zIndex: 1,
+    zIndex: "1px",
     transition: 'width, transform 250ms ease',
     '&[data-state="visible"]': {
       animation: `${fadeIn} 200ms ease`
@@ -192,10 +195,10 @@ const NavigationMenuViewport = styled(NavigationMenu.Viewport, {
   base: {
     position: 'relative',
     transformOrigin: 'top center',
-    marginTop: 10,
+    marginTop: "10px",
     width: '100%',
     backgroundColor: 'white',
-    borderRadius: 6,
+    borderRadius: "6px",
     overflow: 'hidden',
     boxShadow: 'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
     height: 'var(--radix-navigation-menu-viewport-height)',
@@ -214,30 +217,30 @@ const NavigationMenuViewport = styled(NavigationMenu.Viewport, {
 const List = styled('ul', {
   base: {
     display: 'grid',
-    padding: 22,
-    margin: 0,
-    columnGap: 10,
-    listStyle: 'none',
-    variants: {
-      layout: {
-        one: {
-          '@media only screen and (min-width: 600px)': {
-            width: 500,
-            gridTemplateColumns: '.75fr 1fr'
-          }
-        },
-        two: {
-          '@media only screen and (min-width: 600px)': {
-            width: 600,
-            gridAutoFlow: 'column',
-            gridTemplateRows: 'repeat(3, 1fr)'
-          }
+    padding: "22px",
+    margin: "0px",
+    columnGap: "10px",
+    listStyle: 'none'
+  },
+  variants: {
+    layout: {
+      one: {
+        '@media only screen and (min-width: 600px)': {
+          width: "500px",
+          gridTemplateColumns: '.75fr 1fr'
+        }
+      },
+      two: {
+        '@media only screen and (min-width: 600px)': {
+          width: "600px",
+          gridAutoFlow: 'column',
+          gridTemplateRows: 'repeat(3, 1fr)'
         }
       }
-    },
-    defaultVariants: {
-      layout: 'one'
     }
+  },
+  defaultVariants: {
+    layout: 'one'
   }
 });
 const ListItem = React.forwardRef(({
@@ -258,29 +261,29 @@ const ListItemLink = styled('a', {
     outline: 'none',
     textDecoration: 'none',
     userSelect: 'none',
-    padding: 12,
-    borderRadius: 6,
-    fontSize: 15,
+    padding: "12px",
+    borderRadius: "6px",
+    fontSize: "15px",
     lineHeight: 1,
     '&:focus': {
-      boxShadow: `0 0 0 2px ${violet.violet7}`
+      boxShadow: `0 0 0 2px ${"{colors.violet.600}"}`
     },
     '&:hover': {
-      backgroundColor: mauve.mauve3
+      backgroundColor: "{colors.mauve.200}"
     }
   }
 });
 const ListItemHeading = styled('div', {
   base: {
-    fontWeight: 500,
+    fontWeight: "500px",
     lineHeight: 1.2,
-    marginBottom: 5,
-    color: violet.violet12
+    marginBottom: "5px",
+    color: "{colors.violet.950}"
   }
 });
 const ListItemText = styled('p', {
   base: {
-    color: mauve.mauve11,
+    color: "{colors.mauve.950}",
     lineHeight: 1.4,
     fontWeight: 'initial'
   }
@@ -292,31 +295,31 @@ const Callout = styled('a', {
     flexDirection: 'column',
     width: '100%',
     height: '100%',
-    background: `linear-gradient(135deg, ${purple.purple9} 0%, ${indigo.indigo9} 100%);`,
-    borderRadius: 6,
-    padding: 25,
+    background: `linear-gradient(135deg, ${"{colors.purple.800}"} 0%, ${"{colors.indigo.800}"} 100%);`,
+    borderRadius: "6px",
+    padding: "25px",
     textDecoration: 'none',
     outline: 'none',
     userSelect: 'none',
     '&:focus': {
-      boxShadow: `0 0 0 2px ${violet.violet7}`
+      boxShadow: `0 0 0 2px ${"{colors.violet.600}"}`
     }
   }
 });
 const CalloutHeading = styled('div', {
   base: {
     color: 'white',
-    fontSize: 18,
-    fontWeight: 500,
+    fontSize: "18px",
+    fontWeight: "500px",
     lineHeight: 1.2,
-    marginTop: 16,
-    marginBottom: 7
+    marginTop: "16px",
+    marginBottom: "7px"
   }
 });
 const CalloutText = styled('p', {
   base: {
-    color: mauve.mauve4,
-    fontSize: 14,
+    color: "{colors.mauve.300}",
+    fontSize: "14px",
     lineHeight: 1.3
   }
 });
@@ -327,15 +330,15 @@ const ViewportPosition = styled('div', {
     justifyContent: 'center',
     width: '100%',
     top: '100%',
-    left: 0,
+    left: "0px",
     perspective: '2000px'
   }
 });
 const CaretDown = styled(CaretDownIcon, {
   base: {
     position: 'relative',
-    color: violet.violet10,
-    top: 1,
+    color: "{colors.violet.900}",
+    top: "1px",
     transition: 'transform 250ms ease',
     '[data-state=open] &': {
       transform: 'rotate(-180deg)'
@@ -347,10 +350,10 @@ const Arrow = styled('div', {
     position: 'relative',
     top: '70%',
     backgroundColor: 'white',
-    width: 10,
-    height: 10,
+    width: "10px",
+    height: "10px",
     transform: 'rotate(45deg)',
-    borderTopLeftRadius: 2
+    borderTopLeftRadius: "2px"
   }
 });
 export default NavigationMenuDemo;

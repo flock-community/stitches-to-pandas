@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import * as React from 'react';
 import * as Toast from '@radix-ui/react-toast';
-import { violet, blackA, mauve, slate, green } from '@radix-ui/colors';
 const ToastDemo = () => {
   const [open, setOpen] = React.useState(false);
   const eventDateRef = React.useRef(new Date());
@@ -42,17 +41,17 @@ const VIEWPORT_PADDING = 25;
 const ToastViewport = styled(Toast.Viewport, {
   base: {
     position: 'fixed',
-    bottom: 0,
-    right: 0,
+    bottom: "0px",
+    right: "0px",
     display: 'flex',
     flexDirection: 'column',
     padding: VIEWPORT_PADDING,
-    gap: 10,
-    width: 390,
+    gap: "10px",
+    width: "390px",
     maxWidth: '100vw',
-    margin: 0,
+    margin: "0px",
     listStyle: 'none',
-    zIndex: 2147483647,
+    zIndex: "2147483647px",
     outline: 'none'
   }
 });
@@ -62,13 +61,13 @@ const swipeOut = "swipeOut";
 const ToastRoot = styled(Toast.Root, {
   base: {
     backgroundColor: 'white',
-    borderRadius: 6,
+    borderRadius: "6px",
     boxShadow: 'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
-    padding: 15,
+    padding: "15px",
     display: 'grid',
     gridTemplateAreas: '"title action" "description action"',
     gridTemplateColumns: 'auto max-content',
-    columnGap: 15,
+    columnGap: "15px",
     alignItems: 'center',
     '&[data-state="open"]': {
       animation: `${slideIn} 150ms cubic-bezier(0.16, 1, 0.3, 1)`
@@ -91,18 +90,18 @@ const ToastRoot = styled(Toast.Root, {
 const ToastTitle = styled(Toast.Title, {
   base: {
     gridArea: 'title',
-    marginBottom: 5,
-    fontWeight: 500,
-    color: slate.slate12,
-    fontSize: 15
+    marginBottom: "5px",
+    fontWeight: "500px",
+    color: "{colors.slate.950}",
+    fontSize: "15px"
   }
 });
 const ToastDescription = styled(Toast.Description, {
   base: {
     gridArea: 'description',
-    margin: 0,
-    color: slate.slate11,
-    fontSize: 13,
+    margin: "0px",
+    color: "{colors.slate.950}",
+    fontSize: "13px",
     lineHeight: 1.3
   }
 });
@@ -116,52 +115,52 @@ const Button = styled('button', {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 4,
-    fontWeight: 500,
-    variants: {
-      size: {
-        small: {
-          fontSize: 12,
-          padding: '0 10px',
-          lineHeight: '25px',
-          height: 25
-        },
-        large: {
-          fontSize: 15,
-          padding: '0 15px',
-          lineHeight: '35px',
-          height: 35
-        }
+    borderRadius: "4px",
+    fontWeight: "500px"
+  },
+  variants: {
+    size: {
+      small: {
+        fontSize: "12px",
+        padding: '0 10px',
+        lineHeight: '25px',
+        height: "25px"
       },
-      variant: {
-        violet: {
-          backgroundColor: 'white',
-          color: violet.violet11,
-          boxShadow: `0 2px 10px ${blackA.blackA4}`,
-          '&:hover': {
-            backgroundColor: mauve.mauve3
-          },
-          '&:focus': {
-            boxShadow: `0 0 0 2px black`
-          }
-        },
-        green: {
-          backgroundColor: green.green2,
-          color: green.green11,
-          boxShadow: `inset 0 0 0 1px ${green.green7}`,
-          '&:hover': {
-            boxShadow: `inset 0 0 0 1px ${green.green8}`
-          },
-          '&:focus': {
-            boxShadow: `0 0 0 2px ${green.green8}`
-          }
-        }
+      large: {
+        fontSize: "15px",
+        padding: '0 15px',
+        lineHeight: '35px',
+        height: "35px"
       }
     },
-    defaultVariants: {
-      size: 'large',
-      variant: 'violet'
+    variant: {
+      violet: {
+        backgroundColor: 'white',
+        color: "{colors.violet.950}",
+        boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
+        '&:hover': {
+          backgroundColor: "{colors.mauve.200}"
+        },
+        '&:focus': {
+          boxShadow: `0 0 0 2px black`
+        }
+      },
+      green: {
+        backgroundColor: "{colors.green.100}",
+        color: "{colors.green.950}",
+        boxShadow: `inset 0 0 0 1px ${"{colors.green.600}"}`,
+        '&:hover': {
+          boxShadow: `inset 0 0 0 1px ${"{colors.green.700}"}`
+        },
+        '&:focus': {
+          boxShadow: `0 0 0 2px ${"{colors.green.700}"}`
+        }
+      }
     }
+  },
+  defaultVariants: {
+    size: 'large',
+    variant: 'violet'
   }
 });
 function oneWeekAway(date) {

@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
-import { violet, blackA, red, mauve } from '@radix-ui/colors';
 const AlertDialogDemo = () => <AlertDialog.Root>
     <AlertDialog.Trigger asChild>
       <Button>Delete account</Button>
@@ -20,7 +19,7 @@ const AlertDialogDemo = () => <AlertDialog.Root>
       })}>
           <AlertDialog.Cancel asChild>
             <Button variant="mauve" className={css({
-            marginRight: 25
+            marginRight: "25px"
           })}>
               Cancel
             </Button>
@@ -36,16 +35,16 @@ const overlayShow = "overlayShow";
 const contentShow = "contentShow";
 const AlertDialogOverlay = styled(AlertDialog.Overlay, {
   base: {
-    backgroundColor: blackA.blackA6,
+    backgroundColor: "{colors.blackA.500}",
     position: 'fixed',
-    inset: 0,
+    inset: "0px",
     animation: `${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`
   }
 });
 const AlertDialogContent = styled(AlertDialog.Content, {
   base: {
     backgroundColor: 'white',
-    borderRadius: 6,
+    borderRadius: "6px",
     boxShadow: 'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
     position: 'fixed',
     top: '50%',
@@ -54,7 +53,7 @@ const AlertDialogContent = styled(AlertDialog.Content, {
     width: '90vw',
     maxWidth: '500px',
     maxHeight: '85vh',
-    padding: 25,
+    padding: "25px",
     animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
     '&:focus': {
       outline: 'none'
@@ -63,17 +62,17 @@ const AlertDialogContent = styled(AlertDialog.Content, {
 });
 const AlertDialogTitle = styled(AlertDialog.Title, {
   base: {
-    margin: 0,
-    color: mauve.mauve12,
-    fontSize: 17,
-    fontWeight: 500
+    margin: "0px",
+    color: "{colors.mauve.950}",
+    fontSize: "17px",
+    fontWeight: "500px"
   }
 });
 const AlertDialogDescription = styled(AlertDialog.Description, {
   base: {
-    marginBottom: 20,
-    color: mauve.mauve11,
-    fontSize: 15,
+    marginBottom: "20px",
+    color: "{colors.mauve.950}",
+    fontSize: "15px",
     lineHeight: 1.5
   }
 });
@@ -87,50 +86,50 @@ const Button = styled('button', {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 4,
+    borderRadius: "4px",
     padding: '0 15px',
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: 1,
-    fontWeight: 500,
-    height: 35,
-    variants: {
-      variant: {
-        violet: {
-          backgroundColor: 'white',
-          color: violet.violet11,
-          boxShadow: `0 2px 10px ${blackA.blackA4}`,
-          '&:hover': {
-            backgroundColor: mauve.mauve3
-          },
-          '&:focus': {
-            boxShadow: `0 0 0 2px black`
-          }
+    fontWeight: "500px",
+    height: "35px"
+  },
+  variants: {
+    variant: {
+      violet: {
+        backgroundColor: 'white',
+        color: "{colors.violet.950}",
+        boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
+        '&:hover': {
+          backgroundColor: "{colors.mauve.200}"
         },
-        red: {
-          backgroundColor: red.red4,
-          color: red.red11,
-          '&:hover': {
-            backgroundColor: red.red5
-          },
-          '&:focus': {
-            boxShadow: `0 0 0 2px ${red.red7}`
-          }
+        '&:focus': {
+          boxShadow: `0 0 0 2px black`
+        }
+      },
+      red: {
+        backgroundColor: "{colors.red.300}",
+        color: "{colors.red.950}",
+        '&:hover': {
+          backgroundColor: "{colors.red.400}"
         },
-        mauve: {
-          backgroundColor: mauve.mauve4,
-          color: mauve.mauve11,
-          '&:hover': {
-            backgroundColor: mauve.mauve5
-          },
-          '&:focus': {
-            boxShadow: `0 0 0 2px ${mauve.mauve7}`
-          }
+        '&:focus': {
+          boxShadow: `0 0 0 2px ${"{colors.red.600}"}`
+        }
+      },
+      mauve: {
+        backgroundColor: "{colors.mauve.300}",
+        color: "{colors.mauve.950}",
+        '&:hover': {
+          backgroundColor: "{colors.mauve.400}"
+        },
+        '&:focus': {
+          boxShadow: `0 0 0 2px ${"{colors.mauve.600}"}`
         }
       }
-    },
-    defaultVariants: {
-      variant: 'violet'
     }
+  },
+  defaultVariants: {
+    variant: 'violet'
   }
 });
 export default AlertDialogDemo;

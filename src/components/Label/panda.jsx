@@ -1,12 +1,11 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Label from '@radix-ui/react-label';
-import { blackA } from '@radix-ui/colors';
 const LabelDemo = () => <Flex className={css({
   padding: '0 20px',
   flexWrap: 'wrap',
-  gap: 15,
+  gap: "15px",
   alignItems: 'center'
 })}>
     <LabelRoot htmlFor="firstName">First name</LabelRoot>
@@ -14,31 +13,31 @@ const LabelDemo = () => <Flex className={css({
   </Flex>;
 const LabelRoot = styled(Label.Root, {
   base: {
-    fontSize: 15,
-    fontWeight: 500,
+    fontSize: "15px",
+    fontWeight: "500px",
     lineHeight: '35px',
     color: 'white'
   }
 });
 const Input = styled('input', {
   base: {
-    width: 200,
+    width: "200px",
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 4,
+    borderRadius: "4px",
     padding: '0 10px',
-    height: 35,
-    fontSize: 15,
+    height: "35px",
+    fontSize: "15px",
     lineHeight: 1,
     color: 'white',
-    backgroundColor: blackA.blackA2,
-    boxShadow: `0 0 0 1px ${blackA.blackA6}`,
+    backgroundColor: "{colors.blackA.100}",
+    boxShadow: `0 0 0 1px ${"{colors.blackA.500}"}`,
     '&:focus': {
       boxShadow: `0 0 0 2px black`
     },
     '&::selection': {
-      backgroundColor: blackA.blackA6,
+      backgroundColor: "{colors.blackA.500}",
       color: 'white'
     }
   }

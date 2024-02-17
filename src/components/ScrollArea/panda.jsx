@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
-import { violet, mauve, blackA } from '@radix-ui/colors';
 const TAGS = Array.from({
   length: 50
 }).map((_, i, a) => `v1.2.0-beta.${a.length - i}`);
@@ -23,14 +22,14 @@ const ScrollAreaDemo = () => <ScrollAreaRoot>
     </ScrollAreaScrollbar>
     <ScrollAreaCorner />
   </ScrollAreaRoot>;
-const SCROLLBAR_SIZE = 10;
+const SCROLLBAR_SIZE = "10px";
 const ScrollAreaRoot = styled(ScrollArea.Root, {
   base: {
-    width: 200,
-    height: 225,
-    borderRadius: 4,
+    width: "200px",
+    height: "225px",
+    borderRadius: "4px",
     overflow: 'hidden',
-    boxShadow: `0 2px 10px ${blackA.blackA4}`,
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
     backgroundColor: 'white'
   }
 });
@@ -48,11 +47,11 @@ const ScrollAreaScrollbar = styled(ScrollArea.Scrollbar, {
     userSelect: 'none',
     // disable browser handling of all panning and zooming gestures on touch devices
     touchAction: 'none',
-    padding: 2,
-    background: blackA.blackA3,
+    padding: "2px",
+    background: "{colors.blackA.200}",
     transition: 'background 160ms ease-out',
     '&:hover': {
-      background: blackA.blackA5
+      background: "{colors.blackA.400}"
     },
     '&[data-orientation="vertical"]': {
       width: SCROLLBAR_SIZE
@@ -66,7 +65,7 @@ const ScrollAreaScrollbar = styled(ScrollArea.Scrollbar, {
 const ScrollAreaThumb = styled(ScrollArea.Thumb, {
   base: {
     flex: 1,
-    background: mauve.mauve10,
+    background: "{colors.mauve.900}",
     borderRadius: SCROLLBAR_SIZE,
     // increase target size for touch devices https://www.w3.org/WAI/WCAG21/Understanding/target-size.html
     position: 'relative',
@@ -78,14 +77,14 @@ const ScrollAreaThumb = styled(ScrollArea.Thumb, {
       transform: 'translate(-50%, -50%)',
       width: '100%',
       height: '100%',
-      minWidth: 44,
-      minHeight: 44
+      minWidth: "44px",
+      minHeight: "44px"
     }
   }
 });
 const ScrollAreaCorner = styled(ScrollArea.Corner, {
   base: {
-    background: blackA.blackA5
+    background: "{colors.blackA.400}"
   }
 });
 const Box = styled('div', {
@@ -93,20 +92,20 @@ const Box = styled('div', {
 });
 const Text = styled('div', {
   base: {
-    color: violet.violet11,
-    fontSize: 15,
+    color: "{colors.violet.950}",
+    fontSize: "15px",
     lineHeight: '18px',
-    fontWeight: 500
+    fontWeight: "500px"
   }
 });
 const Tag = styled('div', {
   base: {
-    color: mauve.mauve12,
-    fontSize: 13,
+    color: "{colors.mauve.950}",
+    fontSize: "13px",
     lineHeight: '18px',
-    marginTop: 10,
-    borderTop: `1px solid ${mauve.mauve6}`,
-    paddingTop: 10
+    marginTop: "10px",
+    borderTop: `1px solid ${"{colors.mauve.500}"}`,
+    paddingTop: "10px"
   }
 });
 export default ScrollAreaDemo;

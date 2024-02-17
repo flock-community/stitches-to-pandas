@@ -1,4 +1,4 @@
-import { transform } from "../src/babel/plugin";
+import { transform, report } from "../src/babel/plugin";
 
 import * as babel from '@babel/core';
 import {resolve} from "path";
@@ -22,4 +22,8 @@ dir.forEach((it) => {
   if (!!output) {
     writeFileSync(outputDir, output?.code ?? "");
   }
+
+
 })
+
+console.log(report)

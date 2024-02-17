@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as ContextMenu from '@radix-ui/react-context-menu';
-import { violet, mauve } from '@radix-ui/colors';
 import { DotFilledIcon, CheckIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 const ContextMenuDemo = () => {
   const [bookmarksChecked, setBookmarksChecked] = React.useState(true);
@@ -82,87 +81,82 @@ const ContextMenuTrigger = styled(ContextMenu.Trigger, {
     display: 'block',
     border: `2px white dashed`,
     color: 'white',
-    borderRadius: 4,
-    fontSize: 15,
+    borderRadius: "4px",
+    fontSize: "15px",
     userSelect: 'none',
     padding: '45px 0',
-    width: 300,
+    width: "300px",
     textAlign: 'center'
   }
 });
 const contentStyles = {
-  minWidth: 220,
-  backgroundColor: 'white',
-  borderRadius: 6,
-  overflow: 'hidden',
-  padding: 5,
-  boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)'
-};
-const ContextMenuContent = styled(ContextMenu.Content, {
-  base: contentStyles
-});
-const ContextMenuSubContent = styled(ContextMenu.SubContent, {
-  base: contentStyles
-});
-const itemStyles = {
-  fontSize: 13,
-  lineHeight: 1,
-  color: violet.violet11,
-  borderRadius: 3,
-  display: 'flex',
-  alignItems: 'center',
-  height: 25,
-  padding: '0 5px',
-  position: 'relative',
-  paddingLeft: 25,
-  userSelect: 'none',
-  outline: 'none',
-  '&[data-disabled]': {
-    color: mauve.mauve8,
-    pointerEvents: 'none'
-  },
-  '&[data-highlighted]': {
-    backgroundColor: violet.violet9,
-    color: violet.violet1
+  base: {
+    minWidth: "220px",
+    backgroundColor: 'white',
+    borderRadius: "6px",
+    overflow: 'hidden',
+    padding: "5px",
+    boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)'
   }
 };
-const ContextMenuItem = styled(ContextMenu.Item, {
-  base: itemStyles
-});
-const ContextMenuCheckboxItem = styled(ContextMenu.CheckboxItem, {
-  base: itemStyles
-});
-const ContextMenuRadioItem = styled(ContextMenu.RadioItem, {
-  base: itemStyles
-});
+const ContextMenuContent = styled(ContextMenu.Content, contentStyles);
+const ContextMenuSubContent = styled(ContextMenu.SubContent, contentStyles);
+const itemStyles = {
+  base: {
+    fontSize: "13px",
+    lineHeight: 1,
+    color: "{colors.violet.950}",
+    borderRadius: "3px",
+    display: 'flex',
+    alignItems: 'center',
+    height: "25px",
+    padding: '0 5px',
+    position: 'relative',
+    paddingLeft: "25px",
+    userSelect: 'none',
+    outline: 'none',
+    '&[data-disabled]': {
+      color: "{colors.mauve.700}",
+      pointerEvents: 'none'
+    },
+    '&[data-highlighted]': {
+      backgroundColor: "{colors.violet.800}",
+      color: "{colors.violet.50}"
+    }
+  }
+};
+const ContextMenuItem = styled(ContextMenu.Item, itemStyles);
+const ContextMenuCheckboxItem = styled(ContextMenu.CheckboxItem, itemStyles);
+const ContextMenuRadioItem = styled(ContextMenu.RadioItem, itemStyles);
 const ContextMenuSubTrigger = styled(ContextMenu.SubTrigger, {
   base: {
     '&[data-state="open"]': {
-      backgroundColor: violet.violet4,
-      color: violet.violet11
-    }
+      backgroundColor: "{colors.violet.300}",
+      color: "{colors.violet.950}"
+    },
+    ...itemStyles
   }
 });
 const ContextMenuLabel = styled(ContextMenu.Label, {
   base: {
-    paddingLeft: 25,
-    fontSize: 12,
+    paddingLeft: "25px",
+    fontSize: "12px",
     lineHeight: '25px',
-    color: mauve.mauve11
+    color: "{colors.mauve.950}"
   }
 });
 const ContextMenuSeparator = styled(ContextMenu.Separator, {
   base: {
-    height: 1,
-    backgroundColor: violet.violet6,
-    margin: 5
+    height: "1px",
+    backgroundColor: "{colors.violet.500}",
+    margin: "5px"
   }
 });
 const ContextMenuItemIndicator = styled(ContextMenu.ItemIndicator, {
   base: {
     position: 'absolute',
-    left: 0,
-    width: 25,
+    left: "0px",
+    width: "25px",
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -171,13 +165,13 @@ const ContextMenuItemIndicator = styled(ContextMenu.ItemIndicator, {
 const RightSlot = styled('div', {
   base: {
     marginLeft: 'auto',
-    paddingLeft: 20,
-    color: mauve.mauve11,
+    paddingLeft: "20px",
+    color: "{colors.mauve.950}",
     '[data-highlighted] > &': {
       color: 'white'
     },
     '[data-disabled] &': {
-      color: mauve.mauve8
+      color: "{colors.mauve.700}"
     }
   }
 });

@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as HoverCard from '@radix-ui/react-hover-card';
-import { mauve } from '@radix-ui/colors';
 const HoverCardDemo = () => <HoverCard.Root>
     <HoverCard.Trigger asChild>
       <ImageTrigger href="https://twitter.com/radix_ui" target="_blank" rel="noreferrer noopener">
@@ -13,12 +12,12 @@ const HoverCardDemo = () => <HoverCard.Root>
       <HoverCardContent sideOffset={5}>
         <Flex className={css({
         flexDirection: 'column',
-        gap: 7
+        gap: "7px"
       })}>
           <Img size="large" src="https://pbs.twimg.com/profile_images/1337055608613253126/r_eiMp2H_400x400.png" alt="Radix UI" />
           <Flex className={css({
           flexDirection: 'column',
-          gap: 15
+          gap: "15px"
         })}>
             <div>
               <Text bold>Radix</Text>
@@ -29,15 +28,15 @@ const HoverCardDemo = () => <HoverCard.Root>
               Free and open-source.
             </Text>
             <Flex className={css({
-            gap: 15
+            gap: "15px"
           })}>
               <Flex className={css({
-              gap: 5
+              gap: "5px"
             })}>
                 <Text bold>0</Text> <Text faded>Following</Text>
               </Flex>
               <Flex className={css({
-              gap: 5
+              gap: "5px"
             })}>
                 <Text bold>2,900</Text> <Text faded>Followers</Text>
               </Flex>
@@ -55,9 +54,9 @@ const slideDownAndFade = "slideDownAndFade";
 const slideLeftAndFade = "slideLeftAndFade";
 const HoverCardContent = styled(HoverCard.Content, {
   base: {
-    borderRadius: 6,
-    padding: 20,
-    width: 300,
+    borderRadius: "6px",
+    padding: "20px",
+    width: "300px",
     backgroundColor: 'white',
     boxShadow: 'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
     animationDuration: '400ms',
@@ -97,40 +96,40 @@ const ImageTrigger = styled('a', {
 const Img = styled('img', {
   base: {
     display: 'block',
-    borderRadius: '100%',
-    variants: {
-      size: {
-        normal: {
-          width: 45,
-          height: 45
-        },
-        large: {
-          width: 60,
-          height: 60
-        }
+    borderRadius: '100%'
+  },
+  variants: {
+    size: {
+      normal: {
+        width: "45px",
+        height: "45px"
+      },
+      large: {
+        width: "60px",
+        height: "60px"
       }
-    },
-    defaultVariants: {
-      size: 'normal'
     }
+  },
+  defaultVariants: {
+    size: 'normal'
   }
 });
 const Text = styled('div', {
   base: {
-    margin: 0,
-    color: mauve.mauve12,
-    fontSize: 15,
-    lineHeight: 1.5,
-    variants: {
-      faded: {
-        true: {
-          color: mauve.mauve10
-        }
-      },
-      bold: {
-        true: {
-          fontWeight: 500
-        }
+    margin: "0px",
+    color: "{colors.mauve.950}",
+    fontSize: "15px",
+    lineHeight: 1.5
+  },
+  variants: {
+    faded: {
+      true: {
+        color: "{colors.mauve.900}"
+      }
+    },
+    bold: {
+      true: {
+        fontWeight: "500px"
       }
     }
   }

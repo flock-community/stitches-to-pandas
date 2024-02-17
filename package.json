@@ -3,8 +3,8 @@
   "scripts": {
     "prepare": "panda codegen",
     "scripts:generate": "ts-node scripts/generate.ts",
-    "scripts:transpile": "COMPONENT=Checkbox ts-node scripts/transpile.ts",
-    "storybook": "src/node_modules/.bin/storybook dev -p 6006"
+    "scripts:transpile": "ts-node scripts/transpile.ts",
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.23.3",

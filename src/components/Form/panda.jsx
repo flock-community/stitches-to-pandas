@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Form from '@radix-ui/react-form';
-import { blackA, violet, mauve } from '@radix-ui/colors';
 const FormDemo = () => <FormRoot>
     <FormField name="email">
       <Flex className={css({
@@ -31,34 +30,34 @@ const FormDemo = () => <FormRoot>
     </FormField>
     <Form.Submit asChild>
       <Button className={css({
-      marginTop: 10
+      marginTop: "10px"
     })}>Post question</Button>
     </Form.Submit>
   </FormRoot>;
 const FormRoot = styled(Form.Root, {
   base: {
-    width: 260
+    width: "260px"
   }
 });
 const FormField = styled(Form.Field, {
   base: {
     display: 'grid',
-    marginBottom: 10
+    marginBottom: "10px"
   }
 });
 const FormLabel = styled(Form.Label, {
   base: {
-    fontSize: 15,
-    fontWeight: 500,
+    fontSize: "15px",
+    fontWeight: "500px",
     lineHeight: '35px',
     color: 'white'
   }
 });
 const FormMessage = styled(Form.Message, {
   base: {
-    fontSize: 13,
+    fontSize: "13px",
     color: 'white',
-    opacity: 0.8
+    opacity: "0.8px"
   }
 });
 const Flex = styled('div', {
@@ -67,39 +66,42 @@ const Flex = styled('div', {
   }
 });
 const inputStyles = {
-  all: 'unset',
-  boxSizing: 'border-box',
-  width: '100%',
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderRadius: 4,
-  fontSize: 15,
-  color: 'white',
-  backgroundColor: blackA.blackA2,
-  boxShadow: `0 0 0 1px ${blackA.blackA6}`,
-  '&:hover': {
-    boxShadow: `0 0 0 1px black`
-  },
-  '&:focus': {
-    boxShadow: `0 0 0 2px black`
-  },
-  '&::selection': {
-    backgroundColor: blackA.blackA6,
-    color: 'white'
+  base: {
+    boxSizing: 'border-box',
+    width: '100%',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: "4px",
+    fontSize: "15px",
+    color: 'white',
+    backgroundColor: "{colors.blackA.100}",
+    boxShadow: `0 0 0 1px ${"{colors.blackA.500}"}`,
+    '&:hover': {
+      boxShadow: `0 0 0 1px black`
+    },
+    '&:focus': {
+      boxShadow: `0 0 0 2px black`
+    },
+    '&::selection': {
+      backgroundColor: "{colors.blackA.500}",
+      color: 'white'
+    }
   }
 };
 const Input = styled('input', {
   base: {
-    height: 35,
+    height: "35px",
     lineHeight: 1,
-    padding: '0 10px'
+    padding: '0 10px',
+    ...inputStyles
   }
 });
 const Textarea = styled('textarea', {
   base: {
     resize: 'none',
-    padding: 10
+    padding: "10px",
+    ...inputStyles
   }
 });
 const Button = styled('button', {
@@ -108,18 +110,18 @@ const Button = styled('button', {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 4,
+    borderRadius: "4px",
     padding: '0 15px',
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: 1,
-    fontWeight: 500,
-    height: 35,
+    fontWeight: "500px",
+    height: "35px",
     width: '100%',
     backgroundColor: 'white',
-    color: violet.violet11,
-    boxShadow: `0 2px 10px ${blackA.blackA4}`,
+    color: "{colors.violet.950}",
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
     '&:hover': {
-      backgroundColor: mauve.mauve3
+      backgroundColor: "{colors.mauve.200}"
     },
     '&:focus': {
       boxShadow: `0 0 0 2px black`

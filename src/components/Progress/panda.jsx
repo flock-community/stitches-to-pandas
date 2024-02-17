@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Progress from '@radix-ui/react-progress';
-import { blackA } from '@radix-ui/colors';
 const ProgressDemo = () => {
   const [progress, setProgress] = React.useState(13);
   React.useEffect(() => {
@@ -19,10 +18,10 @@ const ProgressRoot = styled(Progress.Root, {
   base: {
     position: 'relative',
     overflow: 'hidden',
-    background: blackA.blackA6,
+    background: "{colors.blackA.500}",
     borderRadius: '99999px',
-    width: 300,
-    height: 25,
+    width: "300px",
+    height: "25px",
     // Fix overflow clipping in Safari
     // https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0
     transform: 'translateZ(0)'

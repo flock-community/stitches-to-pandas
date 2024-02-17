@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import { violet, mauve, blackA } from '@radix-ui/colors';
 import { HamburgerMenuIcon, DotFilledIcon, CheckIcon, ChevronRightIcon } from '@radix-ui/react-icons';
 const DropdownMenuDemo = () => {
   const [bookmarksChecked, setBookmarksChecked] = React.useState(true);
@@ -85,99 +84,93 @@ const slideRightAndFade = "slideRightAndFade";
 const slideDownAndFade = "slideDownAndFade";
 const slideLeftAndFade = "slideLeftAndFade";
 const contentStyles = {
-  minWidth: 220,
-  backgroundColor: 'white',
-  borderRadius: 6,
-  padding: 5,
-  boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
-  animationDuration: '400ms',
-  animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
-  willChange: 'transform, opacity',
-  '&[data-state="open"]': {
-    '&[data-side="top"]': {
-      animationName: slideDownAndFade
-    },
-    '&[data-side="right"]': {
-      animationName: slideLeftAndFade
-    },
-    '&[data-side="bottom"]': {
-      animationName: slideUpAndFade
-    },
-    '&[data-side="left"]': {
-      animationName: slideRightAndFade
+  base: {
+    minWidth: "220px",
+    backgroundColor: 'white',
+    borderRadius: "6px",
+    padding: "5px",
+    boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
+    animationDuration: '400ms',
+    animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+    willChange: 'transform, opacity',
+    '&[data-state="open"]': {
+      '&[data-side="top"]': {
+        animationName: slideDownAndFade
+      },
+      '&[data-side="right"]': {
+        animationName: slideLeftAndFade
+      },
+      '&[data-side="bottom"]': {
+        animationName: slideUpAndFade
+      },
+      '&[data-side="left"]': {
+        animationName: slideRightAndFade
+      }
     }
   }
 };
-const DropdownMenuContent = styled(DropdownMenu.Content, {
-  base: contentStyles
-});
-const DropdownMenuSubContent = styled(DropdownMenu.SubContent, {
-  base: contentStyles
-});
+const DropdownMenuContent = styled(DropdownMenu.Content, contentStyles);
+const DropdownMenuSubContent = styled(DropdownMenu.SubContent, contentStyles);
 const DropdownMenuArrow = styled(DropdownMenu.Arrow, {
   base: {
     fill: 'white'
   }
 });
 const itemStyles = {
-  all: 'unset',
-  fontSize: 13,
-  lineHeight: 1,
-  color: violet.violet11,
-  borderRadius: 3,
-  display: 'flex',
-  alignItems: 'center',
-  height: 25,
-  padding: '0 5px',
-  position: 'relative',
-  paddingLeft: 25,
-  userSelect: 'none',
-  '&[data-disabled]': {
-    color: mauve.mauve8,
-    pointerEvents: 'none'
-  },
-  '&[data-highlighted]': {
-    backgroundColor: violet.violet9,
-    color: violet.violet1
+  base: {
+    fontSize: "13px",
+    lineHeight: 1,
+    color: "{colors.violet.950}",
+    borderRadius: "3px",
+    display: 'flex',
+    alignItems: 'center',
+    height: "25px",
+    padding: '0 5px',
+    position: 'relative',
+    paddingLeft: "25px",
+    userSelect: 'none',
+    '&[data-disabled]': {
+      color: "{colors.mauve.700}",
+      pointerEvents: 'none'
+    },
+    '&[data-highlighted]': {
+      backgroundColor: "{colors.violet.800}",
+      color: "{colors.violet.50}"
+    }
   }
 };
-const DropdownMenuItem = styled(DropdownMenu.Item, {
-  base: itemStyles
-});
-const DropdownMenuCheckboxItem = styled(DropdownMenu.CheckboxItem, {
-  base: itemStyles
-});
-const DropdownMenuRadioItem = styled(DropdownMenu.RadioItem, {
-  base: itemStyles
-});
+const DropdownMenuItem = styled(DropdownMenu.Item, itemStyles);
+const DropdownMenuCheckboxItem = styled(DropdownMenu.CheckboxItem, itemStyles);
+const DropdownMenuRadioItem = styled(DropdownMenu.RadioItem, itemStyles);
 const DropdownMenuSubTrigger = styled(DropdownMenu.SubTrigger, {
   base: {
     '&[data-state="open"]': {
-      backgroundColor: violet.violet4,
-      color: violet.violet11
-    }
+      backgroundColor: "{colors.violet.300}",
+      color: "{colors.violet.950}"
+    },
+    ...itemStyles
   }
 });
 const DropdownMenuLabel = styled(DropdownMenu.Label, {
   base: {
-    paddingLeft: 25,
-    fontSize: 12,
+    paddingLeft: "25px",
+    fontSize: "12px",
     lineHeight: '25px',
-    color: mauve.mauve11
+    color: "{colors.mauve.950}"
   }
 });
 const DropdownMenuSeparator = styled(DropdownMenu.Separator, {
   base: {
-    height: 1,
-    backgroundColor: violet.violet6,
-    margin: 5
+    height: "1px",
+    backgroundColor: "{colors.violet.500}",
+    margin: "5px"
   }
 });
 const DropdownMenuItemIndicator = styled(DropdownMenu.ItemIndicator, {
   base: {
     position: 'absolute',
-    left: 0,
-    width: 25,
+    left: "0px",
+    width: "25px",
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -186,13 +179,13 @@ const DropdownMenuItemIndicator = styled(DropdownMenu.ItemIndicator, {
 const RightSlot = styled('div', {
   base: {
     marginLeft: 'auto',
-    paddingLeft: 20,
-    color: mauve.mauve11,
+    paddingLeft: "20px",
+    color: "{colors.mauve.950}",
     '[data-highlighted] > &': {
       color: 'white'
     },
     '[data-disabled] &': {
-      color: mauve.mauve8
+      color: "{colors.mauve.700}"
     }
   }
 });
@@ -200,16 +193,16 @@ const IconButton = styled('button', {
   base: {
     fontFamily: 'inherit',
     borderRadius: '100%',
-    height: 35,
-    width: 35,
+    height: "35px",
+    width: "35px",
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: violet.violet11,
+    color: "{colors.violet.950}",
     backgroundColor: 'white',
-    boxShadow: `0 2px 10px ${blackA.blackA4}`,
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
     '&:hover': {
-      backgroundColor: violet.violet3
+      backgroundColor: "{colors.violet.200}"
     },
     '&:focus': {
       boxShadow: `0 0 0 2px black`

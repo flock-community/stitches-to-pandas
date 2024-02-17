@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Select from '@radix-ui/react-select';
-import { violet, mauve, blackA } from '@radix-ui/colors';
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 export const SelectDemo = () => <Select.Root>
     <SelectTrigger aria-label="Food">
@@ -60,42 +59,42 @@ const SelectTrigger = styled(Select.SelectTrigger, {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 4,
+    borderRadius: "4px",
     padding: '0 15px',
-    fontSize: 13,
+    fontSize: "13px",
     lineHeight: 1,
-    height: 35,
-    gap: 5,
+    height: "35px",
+    gap: "5px",
     backgroundColor: 'white',
-    color: violet.violet11,
-    boxShadow: `0 2px 10px ${blackA.blackA4}`,
+    color: "{colors.violet.950}",
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
     '&:hover': {
-      backgroundColor: mauve.mauve3
+      backgroundColor: "{colors.mauve.200}"
     },
     '&:focus': {
       boxShadow: `0 0 0 2px black`
     },
     '&[data-placeholder]': {
-      color: violet.violet9
+      color: "{colors.violet.800}"
     }
   }
 });
 const SelectIcon = styled(Select.SelectIcon, {
   base: {
-    color: violet.violet11
+    color: "{colors.violet.950}"
   }
 });
 const SelectContent = styled(Select.Content, {
   base: {
     overflow: 'hidden',
     backgroundColor: 'white',
-    borderRadius: 6,
+    borderRadius: "6px",
     boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)'
   }
 });
 const SelectViewport = styled(Select.Viewport, {
   base: {
-    padding: 5
+    padding: "5px"
   }
 });
 const SelectItem = React.forwardRef(({
@@ -111,65 +110,63 @@ const SelectItem = React.forwardRef(({
 });
 const StyledItem = styled(Select.Item, {
   base: {
-    fontSize: 13,
+    fontSize: "13px",
     lineHeight: 1,
-    color: violet.violet11,
-    borderRadius: 3,
+    color: "{colors.violet.950}",
+    borderRadius: "3px",
     display: 'flex',
     alignItems: 'center',
-    height: 25,
+    height: "25px",
     padding: '0 35px 0 25px',
     position: 'relative',
     userSelect: 'none',
     '&[data-disabled]': {
-      color: mauve.mauve8,
+      color: "{colors.mauve.700}",
       pointerEvents: 'none'
     },
     '&[data-highlighted]': {
       outline: 'none',
-      backgroundColor: violet.violet9,
-      color: violet.violet1
+      backgroundColor: "{colors.violet.800}",
+      color: "{colors.violet.50}"
     }
   }
 });
 const SelectLabel = styled(Select.Label, {
   base: {
     padding: '0 25px',
-    fontSize: 12,
+    fontSize: "12px",
     lineHeight: '25px',
-    color: mauve.mauve11
+    color: "{colors.mauve.950}"
   }
 });
 const SelectSeparator = styled(Select.Separator, {
   base: {
-    height: 1,
-    backgroundColor: violet.violet6,
-    margin: 5
+    height: "1px",
+    backgroundColor: "{colors.violet.500}",
+    margin: "5px"
   }
 });
 const StyledItemIndicator = styled(Select.ItemIndicator, {
   base: {
     position: 'absolute',
-    left: 0,
-    width: 25,
+    left: "0px",
+    width: "25px",
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center'
   }
 });
 const scrollButtonStyles = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  height: 25,
-  backgroundColor: 'white',
-  color: violet.violet11,
-  cursor: 'default'
+  base: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: "25px",
+    backgroundColor: 'white',
+    color: "{colors.violet.950}",
+    cursor: 'default'
+  }
 };
-const SelectScrollUpButton = styled(Select.ScrollUpButton, {
-  base: scrollButtonStyles
-});
-const SelectScrollDownButton = styled(Select.ScrollDownButton, {
-  base: scrollButtonStyles
-});
+const SelectScrollUpButton = styled(Select.ScrollUpButton, scrollButtonStyles);
+const SelectScrollDownButton = styled(Select.ScrollDownButton, scrollButtonStyles);
 export default SelectDemo;

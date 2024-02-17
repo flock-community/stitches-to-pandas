@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Menubar from '@radix-ui/react-menubar';
-import { blackA, violet, mauve } from '@radix-ui/colors';
 import { CheckIcon, ChevronRightIcon, DotFilledIcon } from '@radix-ui/react-icons';
 const RADIO_ITEMS = ['Andy', 'Benoît', 'Luis'];
 const CHECK_ITEMS = ['Always Show Bookmarks Bar', 'Always Show Full URLs'];
@@ -132,9 +131,9 @@ const MenubarRoot = styled(Menubar.Root, {
   base: {
     display: 'flex',
     backgroundColor: 'white',
-    padding: 3,
-    borderRadius: 6,
-    boxShadow: `0 2px 10px ${blackA.blackA4}`
+    padding: "3px",
+    borderRadius: "6px",
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`
   }
 });
 const MenubarTrigger = styled(Menubar.Trigger, {
@@ -142,86 +141,80 @@ const MenubarTrigger = styled(Menubar.Trigger, {
     padding: '8px 12px',
     outline: 'none',
     userSelect: 'none',
-    fontWeight: 500,
+    fontWeight: "500px",
     lineHeight: 1,
-    borderRadius: 4,
-    fontSize: 13,
-    color: violet.violet11,
+    borderRadius: "4px",
+    fontSize: "13px",
+    color: "{colors.violet.950}",
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    gap: 2,
+    gap: "2px",
     '&[data-highlighted], &[data-state="open"]': {
-      backgroundColor: violet.violet4
+      backgroundColor: "{colors.violet.300}"
     }
   }
 });
 const contentStyles = {
-  minWidth: 220,
-  backgroundColor: 'white',
-  borderRadius: 6,
-  padding: 5,
-  boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
-  animationDuration: '400ms',
-  animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
-  willChange: 'transform, opacity'
+  base: {
+    minWidth: "220px",
+    backgroundColor: 'white',
+    borderRadius: "6px",
+    padding: "5px",
+    boxShadow: '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
+    animationDuration: '400ms',
+    animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+    willChange: 'transform, opacity'
+  }
 };
-const MenubarContent = styled(Menubar.Content, {
-  base: contentStyles
-});
-const MenubarSubContent = styled(Menubar.SubContent, {
-  base: contentStyles
-});
+const MenubarContent = styled(Menubar.Content, contentStyles);
+const MenubarSubContent = styled(Menubar.SubContent, contentStyles);
 const itemStyles = {
-  all: 'unset',
-  fontSize: 13,
-  lineHeight: 1,
-  color: violet.violet11,
-  borderRadius: 4,
-  display: 'flex',
-  alignItems: 'center',
-  height: 25,
-  padding: '0 10px',
-  position: 'relative',
-  userSelect: 'none',
-  '&[data-disabled]': {
-    color: mauve.mauve8,
-    pointerEvents: 'none'
-  },
-  '&[data-highlighted]': {
-    backgroundImage: `linear-gradient(135deg, ${violet.violet9} 0%, ${violet.violet10} 100%)`,
-    color: violet.violet1
+  base: {
+    fontSize: "13px",
+    lineHeight: 1,
+    color: "{colors.violet.950}",
+    borderRadius: "4px",
+    display: 'flex',
+    alignItems: 'center',
+    height: "25px",
+    padding: '0 10px',
+    position: 'relative',
+    userSelect: 'none',
+    '&[data-disabled]': {
+      color: "{colors.mauve.700}",
+      pointerEvents: 'none'
+    },
+    '&[data-highlighted]': {
+      backgroundImage: `linear-gradient(135deg, ${"{colors.violet.800}"} 0%, ${"{colors.violet.900}"} 100%)`,
+      color: "{colors.violet.50}"
+    }
   },
   variants: {
     variant: {
       inset: {
-        paddingLeft: 20
+        paddingLeft: "20px"
       }
     }
   }
 };
-const MenubarItem = styled(Menubar.Item, {
-  base: itemStyles
-});
+const MenubarItem = styled(Menubar.Item, itemStyles);
 const MenubarSubTrigger = styled(Menubar.SubTrigger, {
   base: {
     '&[data-state="open"]': {
-      backgroundColor: violet.violet4,
-      color: violet.violet11
-    }
+      backgroundColor: "{colors.violet.300}",
+      color: "{colors.violet.950}"
+    },
+    ...itemStyles
   }
 });
-const MenubarCheckboxItem = styled(Menubar.CheckboxItem, {
-  base: itemStyles
-});
-const MenubarRadioItem = styled(Menubar.RadioItem, {
-  base: itemStyles
-});
+const MenubarCheckboxItem = styled(Menubar.CheckboxItem, itemStyles);
+const MenubarRadioItem = styled(Menubar.RadioItem, itemStyles);
 const MenubarItemIndicator = styled(Menubar.ItemIndicator, {
   base: {
     position: 'absolute',
-    left: 0,
-    width: 20,
+    left: "0px",
+    width: "20px",
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -230,21 +223,21 @@ const MenubarItemIndicator = styled(Menubar.ItemIndicator, {
 const RightSlot = styled('div', {
   base: {
     marginLeft: 'auto',
-    paddingLeft: 20,
-    color: mauve.mauve9,
+    paddingLeft: "20px",
+    color: "{colors.mauve.800}",
     '[data-highlighted] > &': {
       color: 'white'
     },
     '[data-disabled] &': {
-      color: mauve.mauve8
+      color: "{colors.mauve.700}"
     }
   }
 });
 const MenubarSeparator = styled(Menubar.Separator, {
   base: {
-    height: 1,
-    backgroundColor: violet.violet6,
-    margin: 5
+    height: "1px",
+    backgroundColor: "{colors.violet.500}",
+    margin: "5px"
   }
 });
 export default MenubarDemo;

@@ -1,10 +1,9 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
-import { violet, blackA } from '@radix-ui/colors';
 const AvatarDemo = () => <Flex className={css({
-  gap: 20
+  gap: "20px"
 })}>
     <AvatarRoot>
       <AvatarImage src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80" alt="Colm Tuite" />
@@ -26,10 +25,10 @@ const AvatarRoot = styled(AvatarPrimitive.Root, {
     verticalAlign: 'middle',
     overflow: 'hidden',
     userSelect: 'none',
-    width: 45,
-    height: 45,
+    width: "45px",
+    height: "45px",
     borderRadius: '100%',
-    backgroundColor: blackA.blackA1
+    backgroundColor: "{colors.blackA.50}"
   }
 });
 const AvatarImage = styled(AvatarPrimitive.Image, {
@@ -48,10 +47,10 @@ const AvatarFallback = styled(AvatarPrimitive.Fallback, {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
-    color: violet.violet11,
-    fontSize: 15,
+    color: "{colors.violet.950}",
+    fontSize: "15px",
     lineHeight: 1,
-    fontWeight: 500
+    fontWeight: "500px"
   }
 });
 const Flex = styled('div', {

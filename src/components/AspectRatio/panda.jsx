@@ -1,13 +1,12 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as AspectRatio from '@radix-ui/react-aspect-ratio';
-import { blackA } from '@radix-ui/colors';
 const AspectRatioDemo = () => <Box className={css({
-  width: 300,
-  borderRadius: 6,
+  width: "300px",
+  borderRadius: "6px",
   overflow: 'hidden',
-  boxShadow: `0 2px 10px ${blackA.blackA4}`
+  boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`
 })}>
     <AspectRatio.Root ratio={16 / 9}>
       <Img src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80" alt="Landscape photograph by Tobias Tullius" />

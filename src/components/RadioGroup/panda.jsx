@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as RadioGroup from '@radix-ui/react-radio-group';
-import { violet, blackA } from '@radix-ui/colors';
 const RadioGroupDemo = () => <form>
     <RadioGroupRoot defaultValue="default" aria-label="View density">
       <Flex className={css({
@@ -35,18 +34,18 @@ const RadioGroupRoot = styled(RadioGroup.Root, {
   base: {
     display: 'flex',
     flexDirection: 'column',
-    gap: 10
+    gap: "10px"
   }
 });
 const RadioGroupItem = styled(RadioGroup.Item, {
   base: {
     backgroundColor: 'white',
-    width: 25,
-    height: 25,
+    width: "25px",
+    height: "25px",
     borderRadius: '100%',
-    boxShadow: `0 2px 10px ${blackA.blackA4}`,
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
     '&:hover': {
-      backgroundColor: violet.violet3
+      backgroundColor: "{colors.violet.200}"
     },
     '&:focus': {
       boxShadow: `0 0 0 2px black`
@@ -64,10 +63,10 @@ const RadioGroupIndicator = styled(RadioGroup.Indicator, {
     '&::after': {
       content: '""',
       display: 'block',
-      width: 11,
-      height: 11,
+      width: "11px",
+      height: "11px",
       borderRadius: '50%',
-      backgroundColor: violet.violet11
+      backgroundColor: "{colors.violet.950}"
     }
   }
 });
@@ -79,9 +78,9 @@ const Flex = styled('div', {
 const Label = styled('label', {
   base: {
     color: 'white',
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: 1,
-    paddingLeft: 15
+    paddingLeft: "15px"
   }
 });
 export default RadioGroupDemo;

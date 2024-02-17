@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
-import { violet, blackA, mauve } from '@radix-ui/colors';
 import { TextAlignLeftIcon, TextAlignCenterIcon, TextAlignRightIcon } from '@radix-ui/react-icons';
 const ToggleGroupDemo = () => <ToggleGroupRoot type="single" defaultValue="center" aria-label="Text alignment">
     <ToggleGroupItem value="left" aria-label="Left aligned">
@@ -18,38 +17,38 @@ const ToggleGroupDemo = () => <ToggleGroupRoot type="single" defaultValue="cente
 const ToggleGroupRoot = styled(ToggleGroup.Root, {
   base: {
     display: 'inline-flex',
-    backgroundColor: mauve.mauve6,
-    borderRadius: 4,
-    boxShadow: `0 2px 10px ${blackA.blackA4}`
+    backgroundColor: "{colors.mauve.500}",
+    borderRadius: "4px",
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`
   }
 });
 const ToggleGroupItem = styled(ToggleGroup.Item, {
   base: {
     backgroundColor: 'white',
-    color: mauve.mauve11,
-    height: 35,
-    width: 35,
+    color: "{colors.mauve.950}",
+    height: "35px",
+    width: "35px",
     display: 'flex',
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: 1,
+    marginLeft: "1px",
     '&:first-child': {
-      marginLeft: 0,
-      borderTopLeftRadius: 4,
-      borderBottomLeftRadius: 4
+      marginLeft: "0px",
+      borderTopLeftRadius: "4px",
+      borderBottomLeftRadius: "4px"
     },
     '&:last-child': {
-      borderTopRightRadius: 4,
-      borderBottomRightRadius: 4
+      borderTopRightRadius: "4px",
+      borderBottomRightRadius: "4px"
     },
     '&:hover': {
-      backgroundColor: violet.violet3
+      backgroundColor: "{colors.violet.200}"
     },
     '&[data-state=on]': {
-      backgroundColor: violet.violet5,
-      color: violet.violet11
+      backgroundColor: "{colors.violet.400}",
+      color: "{colors.violet.950}"
     },
     '&:focus': {
       position: 'relative',

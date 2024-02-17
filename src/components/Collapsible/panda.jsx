@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Collapsible from '@radix-ui/react-collapsible';
-import { violet, blackA } from '@radix-ui/colors';
 import { RowSpacingIcon, Cross2Icon } from '@radix-ui/react-icons';
 const CollapsibleDemo = () => {
   const [open, setOpen] = React.useState(false);
@@ -35,28 +34,28 @@ const CollapsibleDemo = () => {
 };
 const CollapsibleRoot = styled(Collapsible.Root, {
   base: {
-    width: 300
+    width: "300px"
   }
 });
 const IconButton = styled('button', {
   base: {
     fontFamily: 'inherit',
     borderRadius: '100%',
-    height: 25,
-    width: 25,
+    height: "25px",
+    width: "25px",
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: violet.violet11,
-    boxShadow: `0 2px 10px ${blackA.blackA4}`,
+    color: "{colors.violet.950}",
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
     '&[data-state="closed"]': {
       backgroundColor: 'white'
     },
     '&[data-state="open"]': {
-      backgroundColor: violet.violet3
+      backgroundColor: "{colors.violet.200}"
     },
     '&:hover': {
-      backgroundColor: violet.violet3
+      backgroundColor: "{colors.violet.200}"
     },
     '&:focus': {
       boxShadow: `0 0 0 2px black`
@@ -70,18 +69,18 @@ const Flex = styled('div', {
 });
 const Text = styled('span', {
   base: {
-    color: violet.violet11,
-    fontSize: 15,
+    color: "{colors.violet.950}",
+    fontSize: "15px",
     lineHeight: '25px'
   }
 });
 const Repository = styled('div', {
   base: {
     backgroundColor: 'white',
-    borderRadius: 4,
+    borderRadius: "4px",
     margin: '10px 0',
-    padding: 10,
-    boxShadow: `0 2px 10px ${blackA.blackA4}`
+    padding: "10px",
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`
   }
 });
 export default CollapsibleDemo;

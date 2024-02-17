@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Toolbar from '@radix-ui/react-toolbar';
-import { violet, blackA, mauve } from '@radix-ui/colors';
 import { StrikethroughIcon, TextAlignLeftIcon, TextAlignCenterIcon, TextAlignRightIcon, FontBoldIcon, FontItalicIcon } from '@radix-ui/react-icons';
 const ToolbarDemo = () => <ToolbarRoot aria-label="Formatting options">
     <Toolbar.ToggleGroup type="multiple" aria-label="Text formatting">
@@ -30,7 +29,7 @@ const ToolbarDemo = () => <ToolbarRoot aria-label="Formatting options">
     </Toolbar.ToggleGroup>
     <ToolbarSeparator />
     <ToolbarLink href="#" target="_blank" className={css({
-    marginRight: 10
+    marginRight: "10px"
   })}>
       Edited 2 hours ago
     </ToolbarLink>
@@ -41,70 +40,74 @@ const ToolbarDemo = () => <ToolbarRoot aria-label="Formatting options">
 const ToolbarRoot = styled(Toolbar.Root, {
   base: {
     display: 'flex',
-    padding: 10,
+    padding: "10px",
     width: '100%',
     minWidth: 'max-content',
-    borderRadius: 6,
+    borderRadius: "6px",
     backgroundColor: 'white',
-    boxShadow: `0 2px 10px ${blackA.blackA4}`
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`
   }
 });
 const itemStyles = {
-  all: 'unset',
-  flex: '0 0 auto',
-  color: mauve.mauve11,
-  height: 25,
-  padding: '0 5px',
-  borderRadius: 4,
-  display: 'inline-flex',
-  fontSize: 13,
-  lineHeight: 1,
-  alignItems: 'center',
-  justifyContent: 'center',
-  '&:hover': {
-    backgroundColor: violet.violet3,
-    color: violet.violet11
-  },
-  '&:focus': {
-    position: 'relative',
-    boxShadow: `0 0 0 2px ${violet.violet7}`
+  base: {
+    flex: '0 0 auto',
+    color: "{colors.mauve.950}",
+    height: "25px",
+    padding: '0 5px',
+    borderRadius: "4px",
+    display: 'inline-flex',
+    fontSize: "13px",
+    lineHeight: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    '&:hover': {
+      backgroundColor: "{colors.violet.200}",
+      color: "{colors.violet.950}"
+    },
+    '&:focus': {
+      position: 'relative',
+      boxShadow: `0 0 0 2px ${"{colors.violet.600}"}`
+    }
   }
 };
 const ToolbarToggleItem = styled(Toolbar.ToggleItem, {
   base: {
     backgroundColor: 'white',
-    marginLeft: 2,
+    marginLeft: "2px",
     '&:first-child': {
-      marginLeft: 0
+      marginLeft: "0px"
     },
     '&[data-state=on]': {
-      backgroundColor: violet.violet5,
-      color: violet.violet11
-    }
+      backgroundColor: "{colors.violet.400}",
+      color: "{colors.violet.950}"
+    },
+    ...itemStyles
   }
 });
 const ToolbarSeparator = styled(Toolbar.Separator, {
   base: {
-    width: 1,
-    backgroundColor: mauve.mauve6,
+    width: "1px",
+    backgroundColor: "{colors.mauve.500}",
     margin: '0 10px'
   }
 });
 const ToolbarLink = styled(Toolbar.Link, {
   base: {
     backgroundColor: 'transparent',
-    color: mauve.mauve11,
+    color: "{colors.mauve.950}",
     display: 'none',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    ...itemStyles
   }
 });
 const ToolbarButton = styled(Toolbar.Button, {
   base: {
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: "10px",
+    paddingRight: "10px",
     color: 'white',
-    backgroundColor: violet.violet9
+    backgroundColor: "{colors.violet.800}",
+    ...itemStyles
   }
 });
 export default ToolbarDemo;

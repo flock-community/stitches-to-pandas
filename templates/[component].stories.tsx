@@ -3,26 +3,26 @@
  */
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Stitches from "./stitches.jsx";
-import Panda from "./panda.jsx";
+import StitchesComponent from "./stitches.jsx";
+import PandaComponent from "./panda.jsx";
 
 const meta = {
   title: "Components/[Component]",
-  component: Component,
+  component: StitchesComponent,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Component>;
+} satisfies Meta<typeof StitchesComponent>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 const PandaTemplate: Story = {
   render: () => {
-    return <Panda />;
+    return <PandaComponent />;
   },
 };
 
-export const StitchesTemplate: Story = {};
-export const React: Story = { ...PandaTemplate };
+export const Stitches: Story = {};
+export const Panda: Story = { ...PandaTemplate };

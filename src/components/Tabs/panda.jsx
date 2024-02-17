@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
-import { violet, mauve, blackA, green } from '@radix-ui/colors';
 const TabsDemo = () => <TabsRoot defaultValue="tab1">
     <TabsList aria-label="Manage your account">
       <TabsTrigger value="tab1">Account</TabsTrigger>
@@ -19,7 +18,7 @@ const TabsDemo = () => <TabsRoot defaultValue="tab1">
         <Input id="username" defaultValue="@peduarte" />
       </Fieldset>
       <Flex className={css({
-      marginTop: 20,
+      marginTop: "20px",
       justifyContent: 'flex-end'
     })}>
         <Button variant="green">Save changes</Button>
@@ -40,7 +39,7 @@ const TabsDemo = () => <TabsRoot defaultValue="tab1">
         <Input id="confirmPassword" type="password" />
       </Fieldset>
       <Flex className={css({
-      marginTop: 20,
+      marginTop: "20px",
       justifyContent: 'flex-end'
     })}>
         <Button variant="green">Change password</Button>
@@ -51,15 +50,15 @@ const TabsRoot = styled(Tabs.Root, {
   base: {
     display: 'flex',
     flexDirection: 'column',
-    width: 300,
-    boxShadow: `0 2px 10px ${blackA.blackA2}`
+    width: "300px",
+    boxShadow: `0 2px 10px ${"{colors.blackA.100}"}`
   }
 });
 const TabsList = styled(Tabs.List, {
   base: {
-    flexShrink: 0,
+    flexShrink: "0px",
     display: 'flex',
-    borderBottom: `1px solid ${mauve.mauve6}`
+    borderBottom: `1px solid ${"{colors.mauve.500}"}`
   }
 });
 const TabsTrigger = styled(Tabs.Trigger, {
@@ -67,26 +66,26 @@ const TabsTrigger = styled(Tabs.Trigger, {
     fontFamily: 'inherit',
     backgroundColor: 'white',
     padding: '0 20px',
-    height: 45,
+    height: "45px",
     flex: 1,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: 1,
-    color: mauve.mauve11,
+    color: "{colors.mauve.950}",
     userSelect: 'none',
     '&:first-child': {
-      borderTopLeftRadius: 6
+      borderTopLeftRadius: "6px"
     },
     '&:last-child': {
-      borderTopRightRadius: 6
+      borderTopRightRadius: "6px"
     },
     '&:hover': {
-      color: violet.violet11
+      color: "{colors.violet.950}"
     },
     '&[data-state="active"]': {
-      color: violet.violet11,
+      color: "{colors.violet.950}",
       boxShadow: 'inset 0 -1px 0 0 currentColor, 0 1px 0 0 currentColor'
     },
     '&:focus': {
@@ -98,10 +97,10 @@ const TabsTrigger = styled(Tabs.Trigger, {
 const TabsContent = styled(Tabs.Content, {
   base: {
     flexGrow: 1,
-    padding: 20,
+    padding: "20px",
     backgroundColor: 'white',
-    borderBottomLeftRadius: 6,
-    borderBottomRightRadius: 6,
+    borderBottomLeftRadius: "6px",
+    borderBottomRightRadius: "6px",
     outline: 'none',
     '&:focus': {
       boxShadow: `0 0 0 2px black`
@@ -115,16 +114,16 @@ const Flex = styled('div', {
 });
 const Text = styled('p', {
   base: {
-    marginTop: 0,
-    marginBottom: 20,
-    color: mauve.mauve11,
-    fontSize: 15,
+    marginTop: "0px",
+    marginBottom: "20px",
+    color: "{colors.mauve.950}",
+    fontSize: "15px",
     lineHeight: 1.5
   }
 });
 const Fieldset = styled('fieldset', {
   base: {
-    marginBottom: 15,
+    marginBottom: "15px",
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -133,25 +132,25 @@ const Fieldset = styled('fieldset', {
 });
 const Label = styled('label', {
   base: {
-    fontSize: 13,
+    fontSize: "13px",
     lineHeight: 1,
-    marginBottom: 10,
-    color: violet.violet12,
+    marginBottom: "10px",
+    color: "{colors.violet.950}",
     display: 'block'
   }
 });
 const Input = styled('input', {
   base: {
     flex: '1 0 auto',
-    borderRadius: 4,
+    borderRadius: "4px",
     padding: '0 10px',
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: 1,
-    color: violet.violet11,
-    boxShadow: `0 0 0 1px ${violet.violet7}`,
-    height: 35,
+    color: "{colors.violet.950}",
+    boxShadow: `0 0 0 1px ${"{colors.violet.600}"}`,
+    height: "35px",
     '&:focus': {
-      boxShadow: `0 0 0 2px ${violet.violet8}`
+      boxShadow: `0 0 0 2px ${"{colors.violet.700}"}`
     }
   }
 });
@@ -160,29 +159,29 @@ const Button = styled('button', {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 4,
+    borderRadius: "4px",
     padding: '0 15px',
-    fontSize: 15,
+    fontSize: "15px",
     lineHeight: 1,
-    fontWeight: 500,
-    height: 35,
-    variants: {
-      variant: {
-        green: {
-          backgroundColor: green.green4,
-          color: green.green11,
-          '&:hover': {
-            backgroundColor: green.green5
-          },
-          '&:focus': {
-            boxShadow: `0 0 0 2px ${green.green7}`
-          }
+    fontWeight: "500px",
+    height: "35px"
+  },
+  variants: {
+    variant: {
+      green: {
+        backgroundColor: "{colors.green.300}",
+        color: "{colors.green.950}",
+        '&:hover': {
+          backgroundColor: "{colors.green.400}"
+        },
+        '&:focus': {
+          boxShadow: `0 0 0 2px ${"{colors.green.600}"}`
         }
       }
-    },
-    defaultVariants: {
-      variant: 'green'
     }
+  },
+  defaultVariants: {
+    variant: 'green'
   }
 });
 export default TabsDemo;

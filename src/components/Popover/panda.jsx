@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Popover from '@radix-ui/react-popover';
-import { violet, mauve, blackA } from '@radix-ui/colors';
 import { MixerHorizontalIcon, Cross2Icon } from '@radix-ui/react-icons';
 const PopoverDemo = () => <Popover.Root>
     <Popover.Trigger asChild>
@@ -14,10 +13,10 @@ const PopoverDemo = () => <Popover.Root>
       <PopoverContent sideOffset={5}>
         <Flex className={css({
         flexDirection: 'column',
-        gap: 10
+        gap: "10px"
       })}>
           <Text className={css({
-          marginBottom: 10
+          marginBottom: "10px"
         })}>Dimensions</Text>
           <Fieldset>
             <Label htmlFor="width">Width</Label>
@@ -49,9 +48,9 @@ const slideDownAndFade = "slideDownAndFade";
 const slideLeftAndFade = "slideLeftAndFade";
 const PopoverContent = styled(Popover.Content, {
   base: {
-    borderRadius: 4,
-    padding: 20,
-    width: 260,
+    borderRadius: "4px",
+    padding: "20px",
+    width: "260px",
     backgroundColor: 'white',
     boxShadow: 'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
     animationDuration: '400ms',
@@ -72,7 +71,7 @@ const PopoverContent = styled(Popover.Content, {
       }
     },
     '&:focus': {
-      boxShadow: `hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px, 0 0 0 2px ${violet.violet7}`
+      boxShadow: `hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px, 0 0 0 2px ${"{colors.violet.600}"}`
     }
   }
 });
@@ -85,20 +84,20 @@ const PopoverClose = styled(Popover.Close, {
   base: {
     fontFamily: 'inherit',
     borderRadius: '100%',
-    height: 25,
-    width: 25,
+    height: "25px",
+    width: "25px",
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: violet.violet11,
+    color: "{colors.violet.950}",
     position: 'absolute',
-    top: 5,
-    right: 5,
+    top: "5px",
+    right: "5px",
     '&:hover': {
-      backgroundColor: violet.violet4
+      backgroundColor: "{colors.violet.300}"
     },
     '&:focus': {
-      boxShadow: `0 0 0 2px ${violet.violet7}`
+      boxShadow: `0 0 0 2px ${"{colors.violet.600}"}`
     }
   }
 });
@@ -111,16 +110,16 @@ const IconButton = styled('button', {
   base: {
     fontFamily: 'inherit',
     borderRadius: '100%',
-    height: 35,
-    width: 35,
+    height: "35px",
+    width: "35px",
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: violet.violet11,
+    color: "{colors.violet.950}",
     backgroundColor: 'white',
-    boxShadow: `0 2px 10px ${blackA.blackA4}`,
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
     '&:hover': {
-      backgroundColor: violet.violet3
+      backgroundColor: "{colors.violet.200}"
     },
     '&:focus': {
       boxShadow: `0 0 0 2px black`
@@ -130,15 +129,15 @@ const IconButton = styled('button', {
 const Fieldset = styled('fieldset', {
   base: {
     display: 'flex',
-    gap: 20,
+    gap: "20px",
     alignItems: 'center'
   }
 });
 const Label = styled('label', {
   base: {
-    fontSize: 13,
-    color: violet.violet11,
-    width: 75
+    fontSize: "13px",
+    color: "{colors.violet.950}",
+    width: "75px"
   }
 });
 const Input = styled('input', {
@@ -148,25 +147,25 @@ const Input = styled('input', {
     alignItems: 'center',
     justifyContent: 'center',
     flex: '1',
-    borderRadius: 4,
+    borderRadius: "4px",
     padding: '0 10px',
-    fontSize: 13,
+    fontSize: "13px",
     lineHeight: 1,
-    color: violet.violet11,
-    boxShadow: `0 0 0 1px ${violet.violet7}`,
-    height: 25,
+    color: "{colors.violet.950}",
+    boxShadow: `0 0 0 1px ${"{colors.violet.600}"}`,
+    height: "25px",
     '&:focus': {
-      boxShadow: `0 0 0 2px ${violet.violet8}`
+      boxShadow: `0 0 0 2px ${"{colors.violet.700}"}`
     }
   }
 });
 const Text = styled('p', {
   base: {
-    margin: 0,
-    color: mauve.mauve12,
-    fontSize: 15,
+    margin: "0px",
+    color: "{colors.mauve.950}",
+    fontSize: "15px",
     lineHeight: '19px',
-    fontWeight: 500
+    fontWeight: "500px"
   }
 });
 export default PopoverDemo;

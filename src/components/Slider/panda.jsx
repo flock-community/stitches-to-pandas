@@ -1,8 +1,7 @@
-import { styled } from "../../styled-system/jsx";
-import { css } from '../../styled-system/css';
+import { styled } from "../../../styled-system/jsx";
+import { css } from '../../../styled-system/css';
 import React from 'react';
 import * as Slider from '@radix-ui/react-slider';
-import { violet, blackA } from '@radix-ui/colors';
 const SliderDemo = () => <form>
     <SliderRoot defaultValue={[50]} max={100} step={1}>
       <SliderTrack>
@@ -18,17 +17,17 @@ const SliderRoot = styled(Slider.Root, {
     alignItems: 'center',
     userSelect: 'none',
     touchAction: 'none',
-    width: 200,
-    height: 20
+    width: "200px",
+    height: "20px"
   }
 });
 const SliderTrack = styled(Slider.Track, {
   base: {
-    backgroundColor: blackA.blackA7,
+    backgroundColor: "{colors.blackA.600}",
     position: 'relative',
     flexGrow: 1,
     borderRadius: '9999px',
-    height: 3
+    height: "3px"
   }
 });
 const SliderRange = styled(Slider.Range, {
@@ -42,17 +41,17 @@ const SliderRange = styled(Slider.Range, {
 const SliderThumb = styled(Slider.Thumb, {
   base: {
     display: 'block',
-    width: 20,
-    height: 20,
+    width: "20px",
+    height: "20px",
     backgroundColor: 'white',
-    boxShadow: `0 2px 10px ${blackA.blackA4}`,
-    borderRadius: 10,
+    boxShadow: `0 2px 10px ${"{colors.blackA.300}"}`,
+    borderRadius: "10px",
     '&:hover': {
-      backgroundColor: violet.violet3
+      backgroundColor: "{colors.violet.200}"
     },
     '&:focus': {
       outline: 'none',
-      boxShadow: `0 0 0 5px ${blackA.blackA5}`
+      boxShadow: `0 0 0 5px ${"{colors.blackA.400}"}`
     }
   }
 });
